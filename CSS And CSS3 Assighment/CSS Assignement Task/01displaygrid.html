@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one{
+            padding: 70px;
+            
+        }
+        .main{
+            display: grid;
+            grid-template-columns: repeat(5);
+            gap: 20px;
+        }
+        #two-1{
+            grid-column: 1/9;
+            grid-row: 1/2;
+            background-image: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80);
+            background-position: center;
+            background-size: cover;
+        }
+        #two-2{
+            grid-column: 9/13;
+            grid-row: 1/2;
+            background-image: url(https://cdn4.sharechat.com/ganpat._221d4720_1598041743186_cmprsd_40.jpg?tenant=sc&referrer=pwa-sharechat-service&f=rsd_40.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        #two-3{
+            grid-column: 13/15;
+            grid-row: 1/5;
+            background-color: black;
+            color: red;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+            
+        }
+        li{
+            list-style-type: none;
+        }
+        #two-4{
+            grid-column: 1/3;
+            grid-row: 2/3;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMvKourwscFOrtIMyEYx2uIqfMoZG5B-uRPg&usqp=CAU);
+            background-position: center;
+            background-size: cover;
+        }
+        #two-5{
+            grid-column: 3/10;
+            grid-row: 2/3;
+            background-image: url(https://media.digitalnomads.world/wp-content/uploads/2021/02/20120605/goa.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        #two-6{
+            grid-column: 10/13;
+            grid-row: 2/3;
+            background-image: url(https://www.hindustantimes.com/ht-img/img/2023/04/14/1600x900/ANI-20230408340-0_1681474230799_1681474230799_1681474259537_1681474259537.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        #two-7{
+            grid-column: 1/7;
+            grid-row: 3/4;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRklEUKSluB4_dxrSIejEbshU-G7YI4Ep4a6g&usqp=CAU);
+            background-position: center;
+            background-size: cover;
+        }
+        #two-8{
+            grid-column: 7/13;
+            grid-row: 3/4;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXMAAACICAMAAAAiRvvOAAAAnFBMVEX///9zc3N/ugD/uQHyUCIBpO9qampvb29paWltbW18fHwAou/t7e309PT8/PzAwMCtra3/tACNwSnx9+l1tQDc68KLi4vk5OTD3aD/4qv/vADzZD71fmHySxn1eFzyRgn4sqar2fhSuvP/9+n/68MAqPC2traZmZmkpKTJycnS0tKBgYGMjIzZ2dnm5ubExMT2i3H6w7i74vpUvfMEYak7AAAH+0lEQVR4nO2b6ZacNhBGwY61EKBJ7EAWO4udsNM4yfu/W5BKK5vHccO4+9Q982PQAuKTVFWS6CBAEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBnp2Pv+zwMQhev/h+mxc/PHfz75K373b4ddL8zYtt3qDm/4e3777ZBDU/BtT8fFDz80HNzwc1Px/U/HxQ8/NBzV3SOI6PfwpqboizkAmqox/07JpfhxNG1lPIGA8l3dFPurXm6UWTrD6v8bOT7oyB9RR6Eiryox91a80TxgFWrj3OZsPojuj0kuQrEL3i4f1qTnXTo7XHXfSrEan5wOQFW58TJ6IaQlnI2d3ZFqs5G1YeF4We5i1MaHY9+jU/RS+bTeqp8+MLJBXZ6ky9AcdpTlcshhpORvOrGucHvdyTSWQ7aK2v07aeYpjsoKcdp3nIlxajor7mQc3oNKHHg17uycBYICaCqqZmhfweNb/MM2MTG5j3G/OoXzNC59JAw8y1HBv3qPnSi5Z8ofnXwcj99t6l5nTVi9os1Pzmmney0XMvKqMUnlHU/BDNwSnNvGgu8qKCOJqnEv8WaTGWWV2Og6qd2kLXZmxip2AzFcwu7Ur/Tfeos7K5zu6dDCNUsS0Tt74ozfWjYMhkwUrrbsAxmkdBt/SiMjDkZezGCL20Nm6xoQoZ4ZROS1XaFyIFJsYUxxX5lMO0pytUQcoJiS6eMkkWTutdkcPC2klvKwrpnPC8UYlduM/q2u6LOErzkSzaK7Vj8dXVXA59YjWPe+Y4YSIFy8Qg5HXQMmrvmVRuwZCEjX1QS7mTZZKvuVeFReBuOjfxrjVPFl40lfO1D4qF5nY6NMQTABYpsq9orQNNqcFA50rZFUzD3HQj2cgWVeS64HHGeVDPvaiMgVm7p/lFq0WFBfA1z/R6SmgwuAVnoqu1LSWEiDwt2bhWpXkszYu5F4V3S3c010qSsMrKrKeEW81DUZ2zyYJHdhHAoros605Vm/pTAH1D+mZoL5PJD/17s05UidScERs9ESN6dhFNaLqNsDC4Nb/+toPUfI8dzedeVEotwq9NzVP1puEIDjG5OONcZpRFPGSd3UJolZ6Ruhb1UuhrNejTMYKbweYa7QpIb9Qyop8ekySpilvSBEhV3ALXN9f87993+Htq9I97vN7RfOZFa/CgO5pLXxnSyL5kIh2j0px2kJGaMWsKpuAHibDPkMlMHAP/QGOo3RqP4abK4Zwbn98aq3nqedGUqGG1qXlKZ0pqtOZ2BwruXNgiMQQqYucbtofnO5Xd4t5QTm0lPormyouq+Fi+FRHGYEtz2GcizeKWoDk3u9kpzAdvkVubxa3aIvRvA36VexvinbVHJ2v+zx87/DO94E97fFjcz9H86nrRyLzgluYV9d/bAJrbsySlqreZo9JavRUecm9/GOw199aroDOcEZ6r+ftvd3gfBB++2+PPxf0czdWCR778wMxLbGkeOXPdQ8Ut5hoEJP7K084FNX5JNNoS9Up/XonupvM1f7UJaP5ym09o3lgvWmkPuqk5VFwxLSo+r/zrcBbCQY8JlVodiJNpHaVy85Utt4TbBz6O5hD8CV8nJ7z0oJuawzKTrJxfZK5fCLQRmp3Od3aWZGYdykm2yDWAz4Y59jiaW7XkYYUawxuaw1RfO7j+XM2D0q7yCQSYnZkFlgfVXG1npeqwAhJ3NX/6OJ99EeGpGtsNMCrXRNvj/NFsi/qEgTTSg2pBtmwLhBYrx9FzzcEhUq9MGtlBK4gzvbcolcuptW2mCNjzB/Oh2ovmjgfd1ByM/2bc4mRA3OJ/hxQ7QQiQlmrrkaa6m3y3O4Axe5ZY8UjNzRaKs+7eihVzKLs8lplrvrbqadzDJ92U3KxXVXhZuNkQ/kTPsCY6VnO1h+JptKU5fBTAlx9PzTVXmwRetJ2v2fjEWA9wLH6w6M6rVc3pnWoe27hNJ21prs4kvMEo7cdcc73Qd3pHDfNRV1FQY3BgoeTaHhgNe3tcax+i3YSDNVcfArqDZnNfUe3QciNMmrnnRPYZ+os74zHVZ4/SLrWd6TQY5/JjSHV2ZEWH4xHtVueag92hB326erTmelVoPwPd1FxtDoasF6fy6VBztq55UENJkkPBSvVBCw9kfSPFivP5PsRUphqmjkna3v84da652voV3VfUNz/4P1rzQJkWu4TZPifSB5mUMEKnP/881HlIqg4pREHO1CkPHFiLMT8lR30fMdcE6Q6d8ripYmbKXHNtEtkh50SHa1462xqSnfPQ0js9Djc1D5KQhjP0DweUndFn1FT71YHMa4T2ZwlzzfW0mKXeiMM1V5+z2ITPOPfnW5pPcaDfPdQc+7deBumMZbhGZFbFjoOF5tb334Pm4scrxJ2PPeHKMAMFc37bkhPxv/N9S8XMqTxlVFroTFRg88XSGNr1PWe5cZwDM/022REv3Cs5capUjoe8LFo9cG2Mvn7bkpYC98OsQiQ4i5VYlijhjS/yf3eTJS5zOHuPahVktLKME+Yp2loc2U/kpfs7jbTNOpnM+/nvyNJGfPu1kjVAm/wXkXen1cru8hdya81vQhLHTwvTxG9oV0tu32GzymrRQ6LFr1LzBwc1Px/U/HxQ8/NBzc8HNT8f1Px8UPPzQc3PBzU/n39f/bXJK6H5y5+3eYmaIwiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIKfwH2CoBUaVw1nRAAAAAElFTkSuQmCC);
+            background-position: center;
+            background-size: cover;
+        }
+        #two-9{
+            grid-column: 1/5;
+            grid-row: 4/5;
+            background-image: url(https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2022/05/indiatv15803b-sehwag-1652968485.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        #two-10{
+            grid-column: 5/9;
+            grid-row: 4/5;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc0qWho693qDTmFi0imvG70yZum8i6zlVDVg&usqp=CAU);
+            background-position: center;
+            background-size: cover;
+        }
+        #two-11{
+            grid-column: 9/13;
+            grid-row: 4/5;
+            background-image: url(https://cdn.britannica.com/97/1597-004-05816F4E/Flag-India.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="one" id="two-1"></div>
+    <div class="one" id="two-2"></div>
+    <div class="one" id="two-3">
+        
+        <h4>SHUTTER</h4>
+        
+        <ul>
+            
+            <li>HOME</li>
+            <li>PHOTOS</li>
+            <li>BIO</li>
+            <li>BLOG</li>
+            <li>CONTACT</li>
+        </ul>
+    </div>
+    <div class="one" id="two-4"></div>
+    <div class="one" id="two-5"></div>
+    <div class="one" id="two-6"></div>
+    <div class="one" id="two-7"></div>
+    <div class="one" id="two-8"></div>
+    <div class="one" id="two-9"></div>
+    <div class="one" id="two-10"></div>
+    <div class="one" id="two-11">
+    </div>
+</div>
+</body>
+</html>
