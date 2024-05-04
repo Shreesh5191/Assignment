@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking Form</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to create form elements
+        function createElement(type, attributes, parent, text) {
+            const element = document.createElement(type);
+            for (let key in attributes) {
+                element.setAttribute(key, attributes[key]);
+            }
+            if (text) {
+                element.textContent = text;
+            }
+            if (parent) {
+                parent.appendChild(element);
+            }
+            return element;
+        }
+
+        // Create form
+        const form = createElement('form', {}, document.body);
+
+        // Choice of booking dropdown
+        const bookingLabel = createElement('label', {}, form, 'Choice of booking:');
+        const bookingDropdown = createElement('select', { id: 'bookingChoice', name: 'bookingChoice' }, form);
+        ['Full day booking', 'Half day booking', 'Hourly booking'].forEach(function (option) {
+            createElement('option', { value: option.toLowerCase() }, bookingDropdown, option);
+        });
+        bookingLabel.appendChild(bookingDropdown);
+
+        // User name input
+        createElement('label', { for: 'userName' }, form, 'User name:');
+        createElement('input', { type: 'text', id: 'userName', name: 'userName' }, form);
+
+        // Mobile number input
+        createElement('label', { for: 'mobileNumber' }, form, 'Mobile Number:');
+        createElement('input', { type: 'tel', id: 'mobileNumber', name: 'mobileNumber' }, form);
+
+        // Email input
+        createElement('label', { for: 'email' }, form, 'Email:');
+        createElement('input', { type: 'email', id: 'email', name: 'email' }, form);
+
+        // Number of persons input
+        createElement('label', { for: 'numberOfPersons' }, form, 'No of person:');
+        createElement('input', { type: 'number', id: 'numberOfPersons', name: 'numberOfPersons' }, form);
+
+        // Date input
+        const dateLabel = createElement('label', { for: 'date' }, form, 'Date:');
+        const dateInput = createElement('input', { type: 'date', id: 'date', name: 'date' }, form);
+        dateLabel.appendChild(dateInput);
+
+        // Time input
+        const timeLabel = createElement('label', { for: 'time' }, form, 'Time:');
+        const timeInput = createElement('input', { type: 'time', id: 'time', name: 'time' }, form);
+        timeLabel.appendChild(timeInput);
+
+        // Slot dropdown (for Half day booking)
+        const slotLabel = createElement('label', { for: 'slot' }, form, 'Slot:');
+        const slotDropdown = createElement('select', { id: 'slot', name: 'slot' }, form);
+        ['Breakfast', 'Lunch', 'Dinner'].forEach(function (option) {
+            createElement('option', { value: option.toLowerCase() }, slotDropdown, option);
+        });
+        slotLabel.appendChild(slotDropdown);
+
+        // Event listener for booking choice dropdown
+        bookingDropdown.addEventListener('change', function () {
+            const selectedOption = bookingDropdown.value;
+            // Hide/show relevant fields based on the booking choice
+            dateLabel.style.display = selectedOption === 'full day booking' ? 'block' : 'none';
+            slotLabel.style.display = selectedOption === 'half day booking' ? 'block' : 'none';
+            timeLabel.style.display = selectedOption === 'hourly booking' ? 'block' : 'none';
+        });
+    });
+</script>
+
+</body>
+</html>
